@@ -31,7 +31,6 @@ echo $serie->temporadas . PHP_EOL;
 echo $serie->episodiosPorTemporada . PHP_EOL;
 echo $serie->minutosPorEpisodio . PHP_EOL;
 
-
 $calculadora = new CalculadoraDeMaratona();
 $calculadora->inclui($filme);
 $calculadora->inclui($serie);
