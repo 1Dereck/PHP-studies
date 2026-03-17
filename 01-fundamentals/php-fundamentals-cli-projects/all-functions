@@ -1,0 +1,69 @@
+<?php
+
+// 1)
+function basic() {
+    echo "1) Function basic";
+};
+echo basic() . PHP_EOL;
+
+// 2)
+function basicParametro (int $id) {
+    echo "2) Function basic + parameter: id:$id";
+};
+echo basicParametro(2) . PHP_EOL;
+
+// 3)
+function returnSum(int $a, int $b): int {
+    return $a + $b;
+};
+$resultado = returnSum(5, 10);
+echo "3) Resultado da soma function 5 + 10 = $resultado\n";
+
+// 4)
+function returnParameter(string $nome, int $idade = 18) {
+    echo "4) Return + parameter: $nome, $idade\n";
+};
+// Se a idade não for informada ele vai validar com $idade 18
+returnParameter("Dereck");
+
+// 5) 
+function multReturnArray(int $a, int $b) {
+    return [
+        "Soma" => $a,
+        "Subtração" => $a - $b,
+        "Multiplicacao" => $a * $b,
+    ];
+};
+$resultado = multReturnArray(10, 4);
+echo "5) Multiplos retornos com array: soma: ";
+echo $resultado ["Soma"];
+echo ", Subtração: ", $resultado ["Subtração"];
+echo ", Multiplicação: ", $resultado ["Multiplicacao"] . PHP_EOL;
+
+// 6)
+function tipagemParameter(float $a, float $b): float {
+  return $a / $b;  
+};
+echo "6) Tipagem nos parâmetros: ", tipagemParameter(10, 3), PHP_EOL;
+
+// 7)
+function retornoVoid(string $nome) {
+    echo "7) Retornar void: Nome: $nome\n";
+};
+retornoVoid("Dereck");
+
+// 8) 
+$anonimo = function(string $nome): string {
+    return $nome;
+};
+echo $anonimo("8) Funções anônimas: Satoshi Nakamoto\n");
+
+// 9)
+function fatorial(int $n) {
+    if ($n <= 1) {
+        return 1;
+    } else {
+        return $n * fatorial($n - 1);
+    }
+};
+echo "9) Função recursiva fatorial de 5: ", fatorial(5) . PHP_EOL;
