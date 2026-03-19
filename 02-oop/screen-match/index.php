@@ -2,6 +2,7 @@
 // A ordem importa
 require_once __DIR__ . "/src/Modelo/Genero.php";
 require_once __DIR__ . "/src/Modelo/Titulo.php";
+require_once __DIR__ . "/src/Modelo/Episodio.php";
 require_once __DIR__ . "/src/Modelo/Filme.php";
 require_once __DIR__ . "/src/Modelo/Serie.php";
 require_once __DIR__ . "/src/Calculos/CalculadoraDeMaratona.php";
@@ -23,6 +24,7 @@ echo $filme->media() . PHP_EOL;
 echo $filme->anoLancamento . PHP_EOL;
 
 $serie = new Serie("Lost", 2007, Genero::Drama, 10, 20, 30);
+$episodio = new Episodio($serie, "Episodio piloto", 1);
 
 echo $serie->nome . PHP_EOL;
 echo $serie->anoLancamento . PHP_EOL;
