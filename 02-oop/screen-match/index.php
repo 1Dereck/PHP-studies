@@ -1,5 +1,7 @@
 <?php
 // A ordem importa
+require_once __DIR__ . "/src/Modelo/Avaliavel.php";
+require __DIR__ . "/src/Calculos/ConversorNotaEstrela.php";
 require_once __DIR__ . "/src/Modelo/Genero.php";
 require_once __DIR__ . "/src/Modelo/Titulo.php";
 require_once __DIR__ . "/src/Modelo/Episodio.php";
@@ -24,6 +26,7 @@ echo $filme->media() . PHP_EOL;
 echo $filme->anoLancamento . PHP_EOL;
 
 $serie = new Serie("Lost", 2007, Genero::Drama, 10, 20, 30);
+$serie->avalia(8);
 $episodio = new Episodio($serie, "Episodio piloto", 1);
 
 echo $serie->nome . PHP_EOL;
@@ -39,3 +42,6 @@ $calculadora->inclui($serie);
 $duracao = $calculadora->duracao();
 
 echo "Para essa maratona, você precisa de $duracao minutos\n";
+
+$conversor = new ConversorNotaEstrela();
+echo $conversor->converte($serie);

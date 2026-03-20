@@ -1,7 +1,7 @@
 <?php
 
 class ConversorNotaEstrela {
-    public function conversor (Avaliavel $avaliavel): float {
+    public function converte (Avaliavel $avaliavel): float {
         
         $nota = $avaliavel->media();
 
