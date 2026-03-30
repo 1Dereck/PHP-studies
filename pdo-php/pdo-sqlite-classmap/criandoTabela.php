@@ -2,7 +2,7 @@
 
 $bancoBase = __DIR__ . "/banco.sqlite";
 
-$pdo = new PDO("sqlite:" . $bancoBase);
+$pdo = new PDO ("sqlite:" . $bancoBase);
 
 echo "Conectei seu animal de instancia\n";
 
