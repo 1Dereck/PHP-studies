@@ -100,7 +100,7 @@ Desenvolver domínio completo no ecossistema **PHP**, incluindo:
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Pedreque** durante os estudos de programação.
+Desenvolvido por **Dereck** durante os estudos de programação.
 
 ---
 
