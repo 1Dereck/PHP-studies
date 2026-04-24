@@ -11,6 +11,10 @@ class Produto {
     private string $imagem;
     private float $preco;
 
+    /* $imagem = "logo-serenatto.png", serve para definir que se caso nao preencher 
+     * com imagem ele vai seguir essa logo-serenatto.png como padrão. 
+    */
+    
     public function __construct(?int $id, string $tipo, string $nome, string $descricao, float $preco, string $imagem = "logo-serenatto.png")
     {
         $this->id = $id;
@@ -25,6 +29,8 @@ class Produto {
         return $this->id;
     }
 
+    // Setters serve para alterar dados de uma variável.
+    
     public function setImagem(string $imagem): void {
         $this->imagem = $imagem;
     }
@@ -54,7 +60,8 @@ class Produto {
     }
 
     public function getPrecoFormatado(): string {
-        return "R$ " . number_format($this->preco, 2);
-    }
-
+        // Usado o ',' e o '.' para formatar o preço em Reais (R$)
+        // de acordo com o padrão brasileiro. Ex: 10.999,99
+        return "R$ " . number_format($this->preco, 2, ',', '.');
+    }    
 }
