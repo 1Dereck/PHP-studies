@@ -11,4 +11,3 @@ $produtoRepositorio = new ProductRepository($pdo);
 $produtoRepositorio->deletar($_POST["id"]);
 
 header("Location: admin.php");
-

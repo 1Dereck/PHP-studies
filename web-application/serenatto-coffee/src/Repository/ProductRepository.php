@@ -101,6 +101,4 @@ class ProductRepository {
         $statement->bindValue(6, $produto->getId());
         $statement->execute();
     }
-
-
 }
