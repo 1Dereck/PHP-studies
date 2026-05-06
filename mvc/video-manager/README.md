@@ -110,4 +110,3 @@ video-manager/
 
 ---
 *Desenvolvido por Dereck Felipe Maciel Pereira*
-```
