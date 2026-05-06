@@ -1,0 +1,19 @@
+{
+    "name": "deere/projetophpemysql",
+    "authors": [
+        {
+            "name": "Dereck Felipe Maciel Pereira",
+            "email": "pedrequewr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/",
+            "Models\\": "src/Models/",
+            "Repository\\": "src/Repository/"
+        }
+    },
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
+}
