@@ -59,7 +59,7 @@ video-manager/
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/video-manager.git](https://github.com/seu-usuario/video-manager.git)
+   git clone https://github.com/1Dereck/video-manager.git
    cd video-manager
    ```
 
