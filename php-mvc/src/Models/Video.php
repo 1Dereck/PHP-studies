@@ -15,7 +15,7 @@ class Video
 
     private function setUrl(string $url) {
         if(filter_var($url, FILTER_VALIDATE_URL) === false) {
-            throw new \InvalidArgumentException('URL inválida seu buceta');
+            throw new \InvalidArgumentException('URL inválida');
         }
         $this->url = $url;
     }
