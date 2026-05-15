@@ -1,0 +1,19 @@
+{
+    "name": "dereck.pereira/aluraplay",
+    "authors": [
+        {
+            "name": "Dereck Felipe Maciel Pereira",
+            "email": "pedrequewr@gmail.com"
+        }
+    ],
+    "require": {
+        "psr/http-message": "^2.0",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}
