@@ -59,8 +59,8 @@ video-manager/
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/video-manager.git](https://github.com/seu-usuario/video-manager.git)
-   cd video-manager
+   git clone https://github.com/1Dereck/PHP-studies.git
+   cd PHP-studies/mvc/video-manager
    ```
 
 2. **Instale as dependências:**
@@ -110,4 +110,3 @@ video-manager/
 
 ---
 *Desenvolvido por Dereck Felipe Maciel Pereira*
-```

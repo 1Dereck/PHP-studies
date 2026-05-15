@@ -42,7 +42,7 @@ O Serenatto Café é uma aplicação web que permite aos clientes visualizar o c
 ### Passo a passo
 
 1. Clone o repositório  
-   git clone https://github.com/seu-usuario/PHP-studies.git  
+   git clone git clone https://github.com/1Dereck/PHP-studies.git 
 
 2. Acesse a pasta do projeto  
    cd PHP-studies/web-application/serenatto-cafe  
