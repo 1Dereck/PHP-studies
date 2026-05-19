@@ -129,8 +129,6 @@ Desenvolver domínio completo no ecossistema **PHP**, incluindo:
 
 Desenvolvido por **Dereck** durante os estudos de programação.
 
----
-
 ## ⭐ Observação
 
 Este repositório está em constante evolução. Novos projetos e conteúdos serão adicionados conforme avanço nos estudos.
