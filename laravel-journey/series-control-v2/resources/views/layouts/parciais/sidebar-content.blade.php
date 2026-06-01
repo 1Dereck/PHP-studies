@@ -13,16 +13,29 @@
             default    => '',
         };
     }
+
+    $navItems = $navItems ?? [
+        [
+            'label' => 'Séries',
+            'route' => 'series.index',
+            'icon'  => 'home',
+        ],
+        [
+            'label' => 'Meu Perfil',
+            'route' => 'profile.edit',
+            'icon'  => 'cog',
+        ],
+    ];
 @endphp
 
 {{-- Logo --}}
 <div class="flex items-center gap-3 px-6 h-16 border-b border-white/5">
-    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-orange-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg glow-btc">
-        ₿
+    <div class="w-9 h-9 rounded-xl bg-linear-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg glow-primary">
+        🎬
     </div>
     <div>
-        <h2 class="text-white font-semibold text-sm tracking-tight">{{ config('app.name', 'CryptoFinance') }}</h2>
-        <p class="text-[10px] text-gray-500 font-mono uppercase tracking-widest">Stack · Track · Grow</p>
+        <h2 class="text-white font-semibold text-sm tracking-tight">{{ config('app.name', 'Controle de Séries') }}</h2>
+        <p class="text-[10px] text-gray-500 font-mono uppercase tracking-widest">Organize · Assista · Controle</p>
     </div>
 
     {{-- Close button (mobile only) --}}
@@ -47,10 +60,10 @@
         <a href="{{ Route::has($item['route']) ? route($item['route']) : '#' }}"
            class="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition
                   {{ $isActive
-                        ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/10 text-white border border-purple-500/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]'
+                        ? 'bg-linear-to-r from-purple-600/20 to-indigo-600/10 text-white border border-purple-500/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]'
                         : 'text-gray-400 hover:text-white hover:bg-white/5' }}">
 
-            <span class="w-5 h-5 flex items-center justify-center {{ $isActive ? 'text-orange-400' : 'text-gray-500 group-hover:text-gray-300' }}">
+            <span class="w-5 h-5 flex items-center justify-center {{ $isActive ? 'text-purple-400' : 'text-gray-500 group-hover:text-gray-300' }}">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {!! navIcon($item['icon']) !!}
                 </svg>
@@ -58,21 +71,18 @@
             <span class="flex-1">{{ $item['label'] }}</span>
 
             @if($isActive)
-                <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
             @endif
         </a>
     @endforeach
 
     {{-- Highlight card --}}
-    <div class="mt-8 p-4 rounded-2xl bg-gradient-to-br from-orange-500/10 via-purple-600/10 to-transparent border border-orange-500/15">
+    <div class="mt-8 p-4 rounded-2xl bg-linear-to-br from-purple-500/10 via-indigo-600/10 to-transparent border border-purple-500/15">
         <div class="flex items-center gap-2 mb-2">
-            <span class="text-orange-400 text-lg">⚡</span>
-            <p class="text-xs font-semibold text-white">Próxima meta</p>
+            <span class="text-purple-400 text-lg">🍿</span>
+            <p class="text-xs font-semibold text-white">Progresso Geral</p>
         </div>
-        <p class="text-[11px] text-gray-400 leading-relaxed mb-3">Faltam <span class="text-orange-400 font-mono font-semibold">0.055 BTC</span> para seu primeiro 0.1 BTC.</p>
-        <div class="h-1.5 rounded-full bg-white/5 overflow-hidden">
-            <div class="h-full w-[45%] bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
-        </div>
+        <p class="text-[11px] text-gray-400 leading-relaxed mb-3">Organize suas séries favoritas e controle seus episódios assistidos!</p>
     </div>
 </nav>
 
@@ -80,7 +90,7 @@
 @auth
 <div class="border-t border-white/5 p-4">
     <div class="flex items-center gap-3 mb-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white text-sm font-semibold ring-2 ring-white/5 shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-linear-to-br from-purple-500 to-indigo-500 flex items-center justify-center text-white text-sm font-semibold ring-2 ring-white/5 shrink-0">
             {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
         </div>
         <div class="min-w-0 flex-1">
@@ -104,7 +114,7 @@
 
 @guest
 <div class="border-t border-white/5 p-4 space-y-2">
-    <a href="{{ route('login') }}" class="block text-center w-full px-3 py-2 rounded-xl text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 transition">
+    <a href="{{ route('login') }}" class="block text-center w-full px-3 py-2 rounded-xl text-sm font-medium text-white bg-linear-to-r from-purple-600 to-indigo-600 hover:opacity-90 transition">
         Entrar
     </a>
     <a href="{{ route('register') }}" class="block text-center w-full px-3 py-2 rounded-xl text-sm font-medium text-gray-400 hover:text-white border border-white/5 transition">
