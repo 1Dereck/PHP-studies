@@ -1,46 +1,71 @@
 <x-guest-layout>
-    <x-auth-session-status class="mb-3" :status="session('status')" />
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+
+    <div class="mb-6 text-center">
+        <h2 class="text-2xl font-bold text-gray-900 tracking-tight">Series</h2>
+        <p class="text-sm text-neutral-400 mt-1">Insira suas credenciais para gerenciar suas séries e episódios.</p>
+    </div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" class="form-control" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-1" />
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="nome@email.com"/>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <div class="mb-3">
-            <label for="password" class="form-label">Senha</label>
-            <input id="password" type="password" name="password" class="form-control" required
-                autocomplete="current-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-1" />
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Senha')" />
+
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" placeholder="••••••••"/>
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <div class="mb-3">
-            <div class="form-check">
-                <input id="remember_me" type="checkbox" name="remember" class="form-check-input">
-                <label for="remember_me" class="form-check-label">Lembrar de mim</label>
-            </div>
+        <!-- Remember Me -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ms-2 text-sm text-gray-600">{{ __('Manter-me conectado') }}</span>
+            </label>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mt-4">
-            <div class="d-flex flex-column gap-1">
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-muted small text-decoration-none">
-                        Esqueceu a senha?
-                    </a>
-                @endif
-
-                <a href="{{ route('register') }}" class="text-primary small text-decoration-none">
-                    Criar conta
+        <!-- Esqueci minha senha -->
+        <div class="flex items-center justify-end mt-4">
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{ __('Esqueceu a senha?') }}
                 </a>
-            </div>
+            @endif
 
-            <button type="submit" class="btn btn-dark">
-                Entrar
-            </button>
+            <!-- Botão Entrar -->
+            <x-primary-button class="ms-3">
+                {{ __('Entrar') }}
+            </x-primary-button>
         </div>
+
+        <div class="border-t border-neutral-800/60 my-2"></div>
+
+        <div class="space-y-3 pt-2">
+
+            @if (Route::has('register'))
+                <div class="text-center">
+                    <p class="text-xs text-neutral-400">
+                        Não tem uma conta?
+                        <a class="font-bold text-gray-900 hover:text-black underline transition-colors ml-1" href="{{ route('register') }}">
+                            {{ __('Cadastre-se') }}
+                        </a>
+                    </p>
+                </div>
+            @endif
+        </div>
+
     </form>
 </x-guest-layout>

@@ -9,7 +9,15 @@ use Illuminate\Database\Eloquent\Builder;
 class Series extends Model
 {
     use HasFactory;
-    // Campos que podem ser mass assigned
+    // Oque é fillable e mass assigned?
+    // mass assigned é quando vc cria ou atualiza um objeto sem precisar passar todos os campos um por um
+    // por exemplo se o objeto fosse assim
+    // protected $fillable = ['nome'];
+    // e vc fizesse
+    // Series::create(['nome' => 'The Boys']);
+    // Vc estaria criando um objeto sem passar todos os campos
+    // O fillable é um array que contém os campos que podem ser mass assigned
+    // se nao tiver o fillable, nao pode ser mass assigned
     protected $fillable = ['nome'];
 
     // Define o relacionamento de um para muitos entre Series e Season
