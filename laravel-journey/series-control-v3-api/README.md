@@ -172,17 +172,6 @@ php artisan queue:work
 
 > **Essencial** para escutar a fila no banco de dados e processar o envio assíncrono dos e-mails à caixa de testes do Mailtrap.
 
----
-
-💡 **Dica de Produtividade (Executar tudo com um único comando):**
-O arquivo `composer.json` deste projeto já conta com o pacote `concurrently` configurado. Caso queira iniciar o servidor, o compilador Vite, o processador de filas e a visualização de logs juntos em um só terminal, basta executar:
-
-```bash
-composer dev
-```
-
----
-
 ## 🧪 Testando as Rotas da API
 
 Para facilitar os testes das rotas da aplicação, disponibilizei uma coleção pronta do Postman. Assim, você não precisa configurar requisição por requisição manualmente.
